@@ -36,6 +36,7 @@ import java.util.List;
 
 ">"  {tokens.add(">"); System.out.println("MAYOR QUE");}
 "<"  {tokens.add("<"); System.out.println("MENOR QUE");}
-"=="*  {tokens.add("="); System.out.println("COMPARATIVO");}
-["_" A-Z a-z]+  {tokens.add("id"); System.out.println("IDENTIFICADOR");}
+"=="  {tokens.add("="); System.out.println("COMPARATIVO");}
+"%"{2} {tokens.add("="); System.out.println("MODULO");}
+["_" A-Z a-z] [A-Z a-z]+ {tokens.add("id"); System.out.println("IDENTIFICADOR");}
 [0-9]+  {tokens.add("num"); System.out.println("NUMERO");}
